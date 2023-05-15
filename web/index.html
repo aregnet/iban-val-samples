@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="ibanIn" placeholder="IBAN" /><button id="btnCheck">check</button>
+    <div id="checkResult">
+
+    </div>
+    <script src="https://www.unpkg.com/@aregnet/iban-val"></script>
+    <script>
+        document.getElementById('btnCheck').addEventListener('click', function() {
+            const iban = document.getElementById('ibanIn').value;
+
+            const res = IbanVal.checkIban(iban);
+            document.getElementById("checkResult").innerHTML = JSON.stringify(res);
+        }, false);
+    </script>
+</body>
+</html>
